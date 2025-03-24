@@ -21,3 +21,20 @@ alter table person add personSurname nvarchar(20)
 alter table person alter column personSurname nvarchar(100)
 alter table person add birthdate datetime
 alter table person drop column birthdate
+
+
+use Kutuphane
+select * from adresler
+select * from uyeler
+
+insert into Adresler values ('Kayseri','15 Temmuz','Mevlana',12,3800,'Türkiye')
+
+insert into Adresler(sehir, binaNo) values ('Ankara', 7)
+
+insert into uyeler values ('Fatma Nur','Kılıçkaya', 'fnurkilickaya@kayseri.edu.tr',555,'K',1)
+
+update uyeler set telefon = 3445 where uyeNo = 1
+
+update Adresler set sehir = 'İstanbul' where binaNo = 12 and cadde ='15 Temmuz'
+
+delete from Adresler where adresNo = 2
