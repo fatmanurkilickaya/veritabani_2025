@@ -1,0 +1,38 @@
+Create Database Customers_DB
+use Customers_DB
+
+create Table DISTRICT(
+Id int not null Primary Key,
+CityId int,
+District nvarchar(100)
+);
+
+select * from DISTRICT
+
+create table CITY(
+CityId int PRIMARY KEY,
+CityName nvarchar (100),
+);
+
+EXEC sp_rename 'DISTRICT.District', 'DistrictName', 'COLUMN';
+
+
+ALTER TABLE DISTRICT
+ADD CONSTRAINT FK_CityId FOREIGN KEY (CityId) REFERENCES CITY(CityId);
+
+create table Customers(
+id int not null primary key,
+NameSurname nvarchar(100),
+TCNumber int not null,
+Gender char(2),
+Email nvarchar(100),
+BırthDate int,
+CityId int foreign key (CityId) references CITY(CityId),
+DistrictId int foreign key (DistrictId) references DISTRICT(Id),
+TelNR1 nvarchar(100),
+TelNR2 nvarchar(100)
+);
+
+select * from Customers;
+select * from DISTRICT;
+select * from CITY;
