@@ -1,0 +1,23 @@
+ALTER DATABASE Kutuphane MODIFY NAME=NewLibrary;
+
+
+ALTER DATABASE person MODIFY NAME=newPerson;
+
+create database person
+drop database person
+use Kutuphane
+select * from kitaplar
+ALTER TABLE kitaplar alter column kitapAdi nvarchar(150)
+
+use newPerson
+
+create table person(
+id int primary key,
+personName nvarchar(20)
+);
+
+select * from person
+alter table person add personSurname nvarchar(20)
+alter table person alter column personSurname nvarchar(100)
+alter table person add birthdate datetime
+alter table person drop column birthdate
