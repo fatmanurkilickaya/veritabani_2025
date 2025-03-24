@@ -1,7 +1,7 @@
 create database Library; -- bir kez database oluşturulurken çalıştırılır.
 
 
-use Kutuphane -- bu kütüpaheyi kullanarak aşağıdaki tabloları ekleyebilirsiniz.
+use Library -- bu kütüpaheyi kullanarak aşağıdaki tabloları ekleyebilirsiniz.
 
 
 create table Adresler(
