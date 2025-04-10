@@ -1,0 +1,17 @@
+!--DDL (VERI TANIMLAMA DILI)
+create database database_ismi
+create table tablo_ismi(...);
+
+alter table tablo_ismi ADD sutun_adi ozellikler
+alter table tablo_ismi DROP column sutun_adi
+alter table tablo_ismi ALTER column sutun_adi ozellikleri
+
+DROP TABLE tablo_ismi;
+DROP DATABASE database_ismi;
+TRUNCATE TABLE tablo_ismi;
+
+!-- DML (VERI ISLEME DILI)
+Select * from tablo_ismi where kosul_sartlari;
+insert into tablo_ismi values("her sütun için değerler sırasıyla yazılır")
+update tablo_ismi set sartli_sütun = yeni atanan değer where sartli_sütun = eski değer
+delete from tablo_ismi where sartli_sütun
