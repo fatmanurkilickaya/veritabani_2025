@@ -1,0 +1,12 @@
+1. alt sorgu içerisinde dönecek değer
+tek satırda olmalı
+2. alt sorgu dışındaki 
+select update insert delete temel sorgunun where veya having kısmında yer alabilir
+3.alt sorgular parantez içerisinde 
+yer almalıdır
+4.text veya image veritipleri alt sorgularda kullanılmaz
+5.alt sorgu order by yapısını içermez
+6. alt sorgularda birleştirme işlemi kullanılmaz
+7.alt sorgu kendi FROM ifadesi veya diğer FROM ifadesinde belirtilen sutünları kullanabilir.
+8.tablo_adi.sütunadi şeklinde isimlendirebilir.
+9.temel sorgunun koşul kısmında karşılaştırılan operatörleri kulalnıldığı zaman alt sorgudan tek değer dönmesi gerekir. Alt sorgudan dönen değer birden fazlaysa koşul kısmında IN veya NOT IN gib çoklu değerleri karşılaştımak için kullanılabilir.
