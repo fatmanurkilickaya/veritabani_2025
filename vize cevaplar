@@ -1,0 +1,25 @@
+6- create database ogrenci_bilgi;
+create table ders(
+ders_id int primary key,
+ders_adi nvarchar(20)
+);
+create table bolum(
+bolum_id int primary key,
+bolum_adi nvarchar(20)
+);
+
+7- alter table ders alter column ders_ad nvarchar(200)
+
+8- insert into ogrenci(ogr_adi) values('Fatmanur')
+insert into ders values(1,'vtys')
+insert into bolum values(1,'bilgisayar')
+insert into ogretim_elemanı(adi) values('Fatmanur')
+insert into basari  values(1,30,40,40)
+insert into alir values (1,'Bahar')
+
+9- select * from ogrenci where adi='Fatmanur'
+
+update ogrenci set dogum_tarihi = '14.04.2005' 
+where adi='Fatmanur'
+
+delete from ogrenci where adi='Fatmanur'
