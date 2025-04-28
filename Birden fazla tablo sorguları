@@ -50,3 +50,21 @@ AracNo int foreign key (Aracno) references araclar(Aracno),
 AlisTarihi datetime,
 Fiyat float
 );
+
+insert into musteri 
+values('Fatma Nur','Kılıçkaya','Kayseri','45667')
+insert into musteri 
+values('Sıla','Aydoğdu','Ankara','12354')
+insert into musteri 
+values('İbrahim','Metin','İstanbul','78652')
+insert into musteri 
+values('Mustafa','Erdoğan','İzmir','75525')
+insert into musteri 
+values('Furkan','Altıntop','Manisa','48963')
+
+
+insert into araclar values ( '2002' , 'GLA' ,'mercedes', '38G12', '65000');
+insert into araclar values ( '2020' , 'M5' ,'BMW', '47S21', '185000');
+insert into araclar values ( '2025' , 'EGEA' ,'Fiat', '36Z10', '1800000');
+insert into araclar values ( '2023' , 'COROLLA' ,'toyota', '58A14', '85000');
+insert into araclar values ( '2024' , 'A8' ,'audi', '30B84', '95000');
