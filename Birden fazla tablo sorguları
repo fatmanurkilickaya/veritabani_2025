@@ -80,3 +80,21 @@ insert into alislar values(3,1,2,'2025','882000');
 insert into alislar values(5,1,5,'2024','800034');
 insert into alislar values(2,1,4,'2023','8820003');
 insert into alislar values(4,1,1,'2021','88200034');
+
+
+!-- 1-	Satış yapılan müşterilerin isimlerini 
+!--listelemek için gerekli SQL ifadesini yazınız
+select  M.Madi, M.Msoyadi
+from satislar s
+join musteri m on M.Mno=s.Mno
+
+!-- 2.	Hangi müşteriden hangi aracın alındığını listelemek için gerekli SQL ifadesini yazınız.
+
+select (musteri.Madi+ ' ' + musteri.Msoyadi) as musteri, araclar.model
+from alislar
+inner join musteri on musteri.Mno = alislar.MNo
+inner join araclar on araclar.Aracno = alislar.AracNo
+
+!-- 3.	Her bir müşteriden alınan araçların sayısını listelemek için gerekli SQL ifadesini yazınız.
+select count(a.MNo) from alislar as a
+inner join musteri as m on m.Mno = a.MNo
