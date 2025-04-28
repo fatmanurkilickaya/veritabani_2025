@@ -1,0 +1,52 @@
+a={1,2,4,8}
+b={1,2,3,7}
+
+select * from a
+inner join b on a.sayi=b.sayi // 1,2
+
+select * from a
+left outer join b on a.sayi=b.sayi //1,2,4,8,1,2,null,null
+
+select * from b
+left outer join a on a.sayi=b.sayi //1,2,3,7,1,2,null,null
+
+select * from b
+right outer join a on a.sayi=b.sayi //1,2,4,8,1,2,null,null
+
+select * from a
+right outer join b on a.sayi=b.sayi //1,2,3,7,1,2,null,null
+
+
+use galeri
+create table musteri(
+Mno int primary key identity(1,1),
+Madi nvarchar(50),
+Msoyadi nvarchar(50),
+Madres nvarchar(50),
+Mtelefon nvarchar(50)
+);
+
+create table araclar(
+Aracno int identity(1,1) primary key,
+yil int,
+model nvarchar(50),
+marka nvarchar(50),
+plaka nvarchar(50),
+fiyat float
+);
+
+create table satislar(
+satisNo int primary key not null,
+MNo int foreign key (Mno) references musteri(Mno),
+AracNo int foreign key (Aracno) references araclar(Aracno),
+SatisTarihi datetime,
+Fiyat float
+);
+
+create table alislar(
+alisNo int primary key not null,
+MNo int foreign key (Mno) references musteri(Mno),
+AracNo int foreign key (Aracno) references araclar(Aracno),
+AlisTarihi datetime,
+Fiyat float
+);
