@@ -68,3 +68,15 @@ insert into araclar values ( '2020' , 'M5' ,'BMW', '47S21', '185000');
 insert into araclar values ( '2025' , 'EGEA' ,'Fiat', '36Z10', '1800000');
 insert into araclar values ( '2023' , 'COROLLA' ,'toyota', '58A14', '85000');
 insert into araclar values ( '2024' , 'A8' ,'audi', '30B84', '95000');
+
+
+insert into satislar values(1,1,1,'2024','800000');
+insert into satislar values(2,2,3,'2023','500000');
+insert into satislar values(3,3,5,'2022','20000000');
+insert into satislar values(4,4,2,'2024','30000000');
+
+select * from alislar
+insert into alislar values(3,1,2,'2025','882000');
+insert into alislar values(5,1,5,'2024','800034');
+insert into alislar values(2,1,4,'2023','8820003');
+insert into alislar values(4,1,1,'2021','88200034');
