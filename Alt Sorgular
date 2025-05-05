@@ -10,3 +10,35 @@ yer almalıdır
 7.alt sorgu kendi FROM ifadesi veya diğer FROM ifadesinde belirtilen sutünları kullanabilir.
 8.tablo_adi.sütunadi şeklinde isimlendirebilir.
 9.temel sorgunun koşul kısmında karşılaştırılan operatörleri kulalnıldığı zaman alt sorgudan tek değer dönmesi gerekir. Alt sorgudan dönen değer birden fazlaysa koşul kısmında IN veya NOT IN gib çoklu değerleri karşılaştımak için kullanılabilir.
+
+
+!--1.	Sıla Aydoğdu'ya satılan aracın aynısından başka hangi müşterilere satıldığını bulmak için kullanılacak SQL ifadesiniz yazınız.
+select (musteri.Madi +' '+ musteri.Msoyadi) as satilan_araclar
+from satislar
+Inner Join musteri on musteri.Mno = satislar.MNo
+where aracNo =
+(select AracNo from satislar
+where MNo =(select Mno from musteri 
+where Madi ='Sıla' and Msoyadi ='Aydoğdu'))
+
+!--2.	Satış yapılan araçların bilgilerini listelemek için gerekli SQL ifadesiniz yazınız.
+select musteri.Madi,araclar.marka,araclar.model,
+satislar.Fiyat from satislar
+inner join musteri on musteri.Mno = satislar.MNo
+inner join araclar on araclar.Aracno = satislar.AracNo
+where araclar.AracNo in (select AracNo from araclar)
+
+!--3.Satış tutarı alım tutarından düşük olan araçları listelemek için gerekli SQL ifadesini yazınız.
+select s.Fiyat, a.Fiyat, m.Madi from satislar as s
+inner join alislar as a on a.AracNo=s.AracNo
+inner join musteri as m on m.Mno=s.MNo
+where s.Fiyat < a.Fiyat
+
+SELECT s.Fiyat AS satis, a.Fiyat AS alis,m.Madi
+FROM satislar AS s
+INNER JOIN alislar AS a ON a.AracNo = s.AracNo
+INNER JOIN musteri AS m ON m.Mno = s.MNo
+WHERE s.Fiyat < (
+    SELECT MIN(Fiyat) 
+    FROM alislar 
+);
