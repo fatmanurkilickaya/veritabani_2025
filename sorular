@@ -1,0 +1,42 @@
+use dbpersonel
+create table personel(
+id int primary key identity(1,1),
+ad nvarchar(20),
+soyad nvarchar(20),
+gorev nvarchar(20),
+maas float
+)
+select * from personel
+insert into personel 
+values('fatmanur','Kılıçkaya','akademisyen',789)
+insert into personel 
+values('fatmanur','Kılıçkaya','bilgisayar mühendisi',78621)
+--personellerin görevlerine göre maas ortalaması
+select ad, gorev, AVG(maas)
+from personel
+group by ad, gorev
+-- her bir görevde çalışan personellerin sayısını bul
+select gorev, count(gorev)
+from personel
+group by gorev
+-- en az 3 kişi aynı görevde çalışıyorsa personellerin sayısını ve görevini getir
+select gorev, count(gorev)
+from personel
+group by gorev having count(gorev) >=3 
+
+-- galeri verilerini kullandık
+use galeri
+select * from musteri
+select ar.marka, m.Madi,m.Msoyadi from alislar a
+inner join musteri m on m.Mno = a.Mno
+inner join araclar ar on ar.AracNo = a.AracNo
+group by ar.marka, m.Madi,m.Msoyadi
+having ar.marka = 'BMW'
+
+-- aynı adrese sahip müşteri olup olmadığını bulan sql sorgu
+select DISTINCT 'Aynı adrese sahip olan müşteri'
+where exists
+(select Madres 
+from musteri
+group by Madres
+having count(Madres) < 1)
