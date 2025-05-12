@@ -1,21 +1,4 @@
-a={1,2,4,8}
-b={1,2,3,7}
-
-select * from a
-inner join b on a.sayi=b.sayi // 1,2
-
-select * from a
-left outer join b on a.sayi=b.sayi //1,2,4,8,1,2,null,null
-
-select * from b
-left outer join a on a.sayi=b.sayi //1,2,3,7,1,2,null,null
-
-select * from b
-right outer join a on a.sayi=b.sayi //1,2,4,8,1,2,null,null
-
-select * from a
-right outer join b on a.sayi=b.sayi //1,2,3,7,1,2,null,null
-
+create database galeri;
 
 use galeri
 create table musteri(
